@@ -1,0 +1,17 @@
+
+# Library name
+$LIBNAME  = "xan_restsvm";
+
+# Display the compilation flags (1) or not (0). Default is 0
+# $debug = 0;
+
+# Put the additional dependencies here
+push(@DEPEND, "tg_cliapp");
+push(@DEPEND, "tg_libhttp");
+push(@DEPEND, "tg_json");
+push(@DEPEND, "tg_restsvm");
+# push(@DEPEND, "<component1>", "<component2>");
+
+1;
+# vim: ft=perl
+

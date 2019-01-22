@@ -1,0 +1,8 @@
+CVS
+bin
+lib
+tmp
+*.out
+*.bak
+*~
+

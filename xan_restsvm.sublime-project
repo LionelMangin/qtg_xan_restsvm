@@ -1,0 +1,20 @@
+{
+        "folders":
+        [
+                {
+                        "path": "../tg_sys"
+                },
+                {
+                        "path": "../tg_cliapp"
+                },
+                {
+                        "path": "../tg_json"
+                },
+                {
+                        "path": "../tg_restsvm"
+                },
+                {
+                        "path": "."
+                }
+        ]
+}

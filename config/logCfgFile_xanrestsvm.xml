@@ -1,0 +1,15 @@
+<LOG>
+  <TYPE>
+    <CLASS>XAN_RESTSVM</CLASS>
+    <CODE>Numeric Code</CODE>
+    <EVT>Numeric event code</EVT>
+    <SEVERITY>Severity, between 0 (fatal), 1 (critical), 2 (error), 3 (warning) and 4 (information)</SEVERITY>
+    <LABEL>LOG LABEL, as a character string</LABEL>
+    <ORIGIN>XAN_RESTSVM</ORIGIN>
+    <USERNUMBER>2</USERNUMBER>
+    <VERBOSITY>0 (Always present) 10 (Production, high volumes - technical decline) 20 (Production, limited flows - functional decline) 30 (Piloting - transaction approved) 40 (Testing) 50 (Tuning)</VERBOSITY>
+    <USERTEXT></USERTEXT>
+  </TYPE>
+</LOG>
+
+

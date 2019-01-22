@@ -1,0 +1,28 @@
+$produit = 'xan_restsvm';
+
+%product = (
+  'tg_cliapp'    => 'tg_restsvm',         # remplacement de variable (ne pas oublier de rajouter les bon includes)
+  'tgcliapp'     => 'tgrestsvm',
+  'TG_CLIAPP'    => 'TG_RESTSVM',
+  'TGCLIAPP'     => 'TGRESTSVM',
+
+  'pro_tmp' => 'xan_restsvm',
+  'protmp'  => 'xanrestsvm',
+  'PRO_TMP' => 'XAN_RESTSVM',
+  'PROTMP'  => 'XANRESTSVM',
+);
+
+@busdef = (
+);
+
+@cfgdef = (
+  [ 'instanceId', 'Z', '"0"' ],
+);
+
+@context = (
+);
+
+@session = (
+);
+
+1;

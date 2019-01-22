@@ -1,0 +1,49 @@
+[Project ID]
+Signature=UE Proj: v.1
+
+[Project Information]
+Use Relative Directory=1
+Relative to Project File=1
+Project Wordfile=
+Project Tagfile=
+Create Tagfile=0
+
+[Open Files]
+Open File0=
+Active File Display Mode=-1
+[Group]
+0=gen
+1=include
+2=source
+4=
+3=
+[Files - gen]
+0=depend.lib
+[Files - include]
+0=include\xan_restsvm.h
+1=include\xanrestsvm_bus.h
+2=include\xanrestsvm_cfg.h
+3=include\xanrestsvm_ctx.h
+4=include\xanrestsvm_def.h
+5=include\xanrestsvm_general.h
+6=include\xanrestsvm_ses.h
+[Files - source]
+0=source\xan_restsvm.cxx
+1=source\xanrestsvm_bus.cxx
+2=source\xanrestsvm_cfg.cxx
+3=source\xanrestsvm_cmd.cxx
+4=source\xanrestsvm_ctx.cxx
+5=source\xanrestsvm_dir.cxx
+6=source\xanrestsvm_end.cxx
+7=source\xanrestsvm_evt.cxx
+8=source\xanrestsvm_ini.cxx
+9=source\xanrestsvm_int.cxx
+10=source\xanrestsvm_log.cxx
+11=source\xanrestsvm_not.cxx
+12=source\xanrestsvm_rep.cxx
+13=source\xanrestsvm_req.cxx
+14=source\xanrestsvm_ses.cxx
+15=source\xanrestsvm_tim.cxx
+[File View]
+Current Select=Project Files\include\xan_restsvm.h
+Scroll Position=0
