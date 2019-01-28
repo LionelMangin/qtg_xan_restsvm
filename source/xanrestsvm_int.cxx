@@ -13,7 +13,7 @@ bool XAN_RESTSVM::preProcessRequest()
   const char *ka_funcName = "XAN_RESTSVM::preProcessRequest";
   trace(tg_traceProTrc,tg_traceMskNone, ka_funcName, (void*)0, (byte4)0);
 
-  if (mcp_bus->httpMessage().method() == "OPTIONS")
+  if (mcp_bus->httpMessage().ismethod() && mcp_bus->httpMessage().method() == "OPTIONS")
   	return true;
 
   return false;
@@ -27,7 +27,7 @@ void XAN_RESTSVM::forceResponseBusFields()
   const char *ka_funcName = "XAN_RESTSVM::forceResponseBusFields";
   trace(tg_traceProTrc,tg_traceMskNone, ka_funcName, (void*)0, (byte4)0);
 
-  if (mcp_bus->httpMessage().method() == "OPTIONS")
+  if (mcp_bus->httpMessage().ismethod() && mcp_bus->httpMessage().method() == "OPTIONS")
   {
     mcp_bus->httpMessage().status("204");
 
