@@ -48,6 +48,11 @@ class TGAPPCLILIBSPC XAN_RESTSVM : public TG_RESTSVM
 
     // Put your own methods here.
 
+    /// @brief pre-processs request.
+    bool preProcessRequest();
+
+    /// @brief force response bus fields.
+    void forceResponseBusFields();
 
     /*****************************************
      * Methods for object management         *
