@@ -20,6 +20,7 @@ $produit = 'xan_restsvm';
 );
 
 @context = (
+  [ 'originHeader', 'Z'],
 );
 
 @session = (

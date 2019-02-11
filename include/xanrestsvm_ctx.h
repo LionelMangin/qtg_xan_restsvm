@@ -1,6 +1,6 @@
 /*
- * xan_restsvm product was generated on 2019/01/18 at 14:54:46 with pro_tmp version V03_03 and bin tools version V02_17_16 .
- * This file was generated on 2019/01/18 at 14:54:46 with pro_tmp version V03_03 and bin tools version V02_17_16 .
+ * xan_restsvm product was generated on 2019/02/11 at 08:58:49 with pro_tmp version V03_03 and bin tools version 3.16.0 .
+ * This file was generated on 2019/02/11 at 08:58:49 with pro_tmp version V03_03 and bin tools version 3.16.0 .
  */
 
 #ifndef XANRESTSVM_CTX_H
@@ -10,6 +10,7 @@
 struct TGAPPCLILIBSPC s_xanrestsvmctx : public s_tgrestsvmctx
 {
 
+  string mz_originHeader; ///< originHeader.
 
 
 #ifdef TGTABLE_IN_CTXSES
@@ -57,6 +58,21 @@ class TGAPPCLILIBSPC XANRESTSVM_CTX : public TGRESTSVM_CTX
      * Declaration of variables and access   *
      * methods                               *
      *****************************************/
+
+  public:
+
+    /// @brief Sets the context field value.
+    /// @param[in] pc_in Value to set.
+    /// @return Reference to context field value.
+    string & originHeader(const string & pc_in);
+
+    /// @brief Gets the context field value.
+    /// @return Context field value.
+    string & originHeader();
+
+    /// @brief Finds the context request session based on the field value.
+    /// @param[in] pc_in Value of originHeader to look for.
+    void findoriginHeader(const string & pc_in);
 
 
 };
