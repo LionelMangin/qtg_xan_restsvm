@@ -7,6 +7,11 @@
 #define XANRESTSVM_DEF_H
 
 // Write here all types definitions and constants.
+#include "constants.h"
+
+namespace xanrestsvm {
+	extern const string kz_qobuzOrigin; ///< *.qobuz.com
+};
 
 #endif
 

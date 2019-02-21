@@ -1,6 +1,6 @@
 /*
- * xan_restsvm product was generated on 2019/02/11 at 08:58:49 with pro_tmp version V03_03 and bin tools version 3.16.0 .
- * This file was generated on 2019/02/11 at 08:58:49 with pro_tmp version V03_03 and bin tools version 3.16.0 .
+ * xan_restsvm product was generated on 2019/02/21 at 18:28:17 with pro_tmp version V03_03 and bin tools version 3.16.0 .
+ * This file was generated on 2019/02/21 at 18:28:17 with pro_tmp version V03_03 and bin tools version 3.16.0 .
  */
 
 #include "xanrestsvm_general.h"
@@ -29,7 +29,7 @@ void XANRESTSVM_CTX::init(s_tgclictx * const psp_ctx)
   else
     TGRESTSVM_CTX::init(psp_ctx);
 
-  static_cast<s_xanrestsvmctx *>(msp_ctx)->mz_originHeader = "";
+  static_cast<s_xanrestsvmctx *>(msp_ctx)->mz_originHeader = kz_emptyString;
 
 }
 

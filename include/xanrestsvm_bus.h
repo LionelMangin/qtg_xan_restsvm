@@ -1,6 +1,6 @@
 /*
- * xan_restsvm product was generated on 2019/01/18 at 14:54:46 with pro_tmp version V03_03 and bin tools version V02_17_16 .
- * This file was generated on 2019/01/18 at 14:54:46 with pro_tmp version V03_03 and bin tools version V02_17_16 .
+ * xan_restsvm product was generated on 2019/02/20 at 14:31:29 with pro_tmp version V03_03 and bin tools version 3.16.0 .
+ * This file was generated on 2019/02/20 at 14:31:29 with pro_tmp version V03_03 and bin tools version 3.16.0 .
  */
 
 #ifndef XANRESTSVM_BUS_H
@@ -16,6 +16,7 @@
 /// Structure that lists the AD of bus.
 struct TGAPPCLILIBSPC XANRESTSVMBUS_AD
 {
+  byte4 app_id; ///< AD reference for app_id
 
 };
 
@@ -66,6 +67,39 @@ class TGAPPCLILIBSPC XANRESTSVM_BUS : public TGRESTSVM_BUS
      * Declaration of variables and access   *
      * methods                               *
      *****************************************/
+
+  protected:
+
+    byte4 m4_app_id_flag; ///< ms_app_id status flag.
+    string ms_app_id; ///< app_id.
+
+  public:
+    
+    /// @brief Returns the name of the field.
+    /// @return Bus field name.
+    const char *nomapp_id() const;
+
+    /// @brief Gets the value of the field.
+    /// @return Value of app_id.
+    const string & app_id();
+
+    /// @brief Checks presence of the field in Tango bus.
+    /// @return 0 if absent, 1 if present.
+    byte4 isapp_id();
+
+    /// @brief Deletes the field from Tango bus.
+    void delapp_id();
+
+    /// @brief Sets a value to the field.
+    /// @param[in] pc_in (Const) reference of the value to set.
+    /// @return Reference to bus field value.
+    inline string & app_id(const string &pc_in)
+    {
+      m4_changed = 1;
+      m4_app_id_flag = k4_flagMod;
+      
+      return ms_app_id = pc_in;
+    }
 
 
 };

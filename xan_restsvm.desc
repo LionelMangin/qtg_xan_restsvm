@@ -13,6 +13,7 @@ $produit = 'xan_restsvm';
 );
 
 @busdef = (
+  [ 'app_id', 'Z'],
 );
 
 @cfgdef = (
@@ -20,7 +21,7 @@ $produit = 'xan_restsvm';
 );
 
 @context = (
-  [ 'originHeader', 'Z'],
+  [ 'originHeader', 'Z', 'kz_emptyString'],
 );
 
 @session = (

@@ -1,6 +1,6 @@
 /*
- * xan_restsvm product was generated on 2019/01/18 at 14:54:46 with pro_tmp version V03_03 and bin tools version V02_17_16 .
- * This file was generated on 2019/01/18 at 14:54:46 with pro_tmp version V03_03 and bin tools version V02_17_16 .
+ * xan_restsvm product was generated on 2019/02/20 at 14:31:29 with pro_tmp version V03_03 and bin tools version 3.16.0 .
+ * This file was generated on 2019/02/20 at 14:31:29 with pro_tmp version V03_03 and bin tools version 3.16.0 .
  */
 
 #include "xanrestsvm_general.h"
@@ -14,6 +14,11 @@ XANRESTSVM_BUS::XANRESTSVM_BUS(TG_DIC &pcr_dic, TG_BUS *pcp_bus) : TGRESTSVM_BUS
   m1p_nomAutobus = "XANRESTSVM_BUS";
   std::list<std::string> lc_errorFields;
 
+  if ((mcp_ad->app_id = pcr_dic.getAd4Field("app_id")) == k4_no_adField)
+  {
+    cout << "Field " << "app_id" << " is not in dictionary." << endl;
+    lc_errorFields.push_back("app_id");
+  }
 
 
   if (!lc_errorFields.empty())
@@ -36,6 +41,7 @@ XANRESTSVM_BUS::XANRESTSVM_BUS(TG_DIC &pcr_dic, TG_BUS *pcp_bus) : TGRESTSVM_BUS
 void XANRESTSVM_BUS::initFlags()
 {
   TGRESTSVM_BUS::initFlags();
+  m4_app_id_flag = k4_flagBus;
 
 }
 
@@ -69,10 +75,48 @@ TG_BUS *XANRESTSVM_BUS::pointAt(TG_BUS *pcp_bus)
 
 TG_BUS * XANRESTSVM_BUS::bus()
 {
+  if (m4_app_id_flag == k4_flagMod)
+  {
+    
+    {
+      
+      mcp_bus->setDirect(mcp_ad->app_id, (byte1 *)(ms_app_id.data()), byte4(ms_app_id.size()), k1_fTyp_asc);
+      m4_app_id_flag = k4_flagVar;
+    }
+  }
 
 
   return TGRESTSVM_BUS::bus();
 }
 
+const string & XANRESTSVM_BUS ::app_id()
+{
+  if (m4_app_id_flag == k4_flagBus)
+  {
+    if (!mcp_bus->get(mcp_ad->app_id, ms_app_id))
+      throw(missing_field_err(__FILE__, m1p_nomAutobus, __LINE__, m1p_nomAutobus, itos(mcp_ad->app_id)));
+    m4_app_id_flag = k4_flagVar;
+  }
+  return ms_app_id;
+}
+void XANRESTSVM_BUS ::delapp_id()
+{
+  mcp_bus->del(mcp_ad->app_id);
+  m4_app_id_flag = k4_flagBus;
+  m4_changed = 1;
+  
+}
+
+byte4 XANRESTSVM_BUS ::isapp_id()
+{
+  if (m4_app_id_flag == k4_flagBus)
+    return (NULL != mcp_bus->find(mcp_ad->app_id));
+  return 1;
+}
+
+const char * XANRESTSVM_BUS ::nomapp_id() const
+{
+  return "app_id";
+}
 
 
