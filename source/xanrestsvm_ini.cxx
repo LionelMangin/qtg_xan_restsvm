@@ -4,6 +4,7 @@
  */
 
 #include "xanrestsvm_general.h"
+#include <arpa/inet.h>
 
 /// @brief Constructs the object.
 /// This method is called in the two constructors.
@@ -32,17 +33,34 @@ void XAN_RESTSVM::buildTransUIdConstantPart()
   trace(tg_traceProTrc,tg_traceMskNone, ka_funcName, (void*)0, (byte4)0);
 
   // instanceId (1)
+  char lc_hostbuffer[256];
+  char lc_IPbuffer[INET_ADDRSTRLEN];
+  struct hostent *lsp_host_entry;
 
-if (isVerbose()) cout << "[" << ka_funcName << " (" << __LINE__ << ")] " << "mcp_cfg->instanceId() :" << mcp_cfg->instanceId() << ":" << endl;
+  // retrieve hostname
+  if (gethostname(lc_hostbuffer, sizeof(lc_hostbuffer)) != -1)
+  {
+    // retrieve host information
+    lsp_host_entry = gethostbyname(lc_hostbuffer);
+    if (lsp_host_entry != NULL)
+      inet_ntop(AF_INET, (void *) lsp_host_entry->h_addr, lc_IPbuffer, INET_ADDRSTRLEN); // convert to ASCII ip
+    else
+      logCliApp(k4_x4, MLLP("unable to get ip address"));
+  }
+  else
+    logCliApp(k4_x4, MLLP("unable to get hostname"));
 
-  mz_dummy.assign(litos(ip_to_byte8(mcp_cfg->instanceId().c_str())));
+if (isVerbose()) cout << "[" << ka_funcName << " (" << __LINE__ << ")] " << "hostname :" << lc_hostbuffer << ":" << endl;
+if (isVerbose()) cout << "[" << ka_funcName << " (" << __LINE__ << ")] " << "IP :" << lc_IPbuffer << ":" << endl;
+
+  mz_dummy.assign(litos(ip_to_byte8(lc_IPbuffer)));
   mz_transUIdConstantPart.append(lpad(mz_dummy, 11 , '0'));
 
   // processId (4)
   mz_dummy.assign(itos(gcp_envMgr->getIdProcess()));
   mz_transUIdConstantPart.append(lpad(mz_dummy, 4, '0'));
 
-  // instance id (3)
+  // appli number (3)
   mz_dummy.assign(itos(getAppliNumber()));
   mz_transUIdConstantPart.append(lpad(mz_dummy, 3, '0'));
 

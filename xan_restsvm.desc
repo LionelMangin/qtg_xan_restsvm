@@ -17,7 +17,6 @@ $produit = 'xan_restsvm';
 );
 
 @cfgdef = (
-  [ 'instanceId', 'Z', '"0"' ],
 );
 
 @context = (

@@ -1,6 +1,6 @@
 /*
- * xan_restsvm product was generated on 2019/01/18 at 15:36:01 with pro_tmp version V03_03 and bin tools version 3.16.0-rc2 .
- * This file was generated on 2019/01/18 at 15:36:01 with pro_tmp version V03_03 and bin tools version 3.16.0-rc2 .
+ * xan_restsvm product was generated on 2019/03/15 at 13:32:43 with pro_tmp version V03_03 and bin tools version 3.16.1-rc1 .
+ * This file was generated on 2019/03/15 at 13:32:43 with pro_tmp version V03_03 and bin tools version 3.16.1-rc1 .
  */
 
 #ifndef XANRESTSVM_CFG_H
@@ -38,19 +38,6 @@ class TGAPPCLILIBSPC XANRESTSVM_CFG : public TGRESTSVM_CFG
      *****************************************/
 
     
-  protected:
-
-    string ms_instanceId; ///< instanceId.
-
-  public:
-
-    /// @brief Gets the configuration field value.
-    /// @return instanceId value.
-    string &instanceId()
-    {
-      return ms_instanceId;
-    }
-
 };
 
 #if (defined __windows__)
