@@ -5,6 +5,7 @@
 
 #include "xanrestsvm_general.h"
 #include <arpa/inet.h>
+#include <netdb.h>
 
 /// @brief Constructs the object.
 /// This method is called in the two constructors.
@@ -36,13 +37,15 @@ void XAN_RESTSVM::buildTransUIdConstantPart()
   char lc_hostbuffer[256];
   char lc_IPbuffer[INET_ADDRSTRLEN];
   struct hostent *lsp_host_entry;
+  char getByName[1024];
+  hostent ls_host;
+  int l4_h_errnop;
 
   // retrieve hostname
   if (gethostname(lc_hostbuffer, sizeof(lc_hostbuffer)) != -1)
   {
     // retrieve host information
-    lsp_host_entry = gethostbyname(lc_hostbuffer);
-    if (lsp_host_entry != NULL)
+    if((0 == gethostbyname_r(lc_hostbuffer, &ls_host, getByName, sizeof(getByName), &lsp_host_entry, &l4_h_errnop)) && lsp_host_entry != NULL)
       inet_ntop(AF_INET, (void *) lsp_host_entry->h_addr, lc_IPbuffer, INET_ADDRSTRLEN); // convert to ASCII ip
     else
       logCliApp(k4_x4, MLLP("unable to get ip address"));
